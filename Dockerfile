@@ -3,7 +3,11 @@ FROM parrotsec/core
 RUN dpkg --add-architecture i386 && apt-get update && apt-get upgrade -y
 
 # basic tools
-RUN apt-get install -y git gdb file curl wget vim ltrace strace netcat nmap man dnsutils
+RUN apt-get install -y \
+  git man file curl wget vim \
+  gdb ltrace strace \
+  netcat nmap dnsutils \
+  exiftool
 
 # dev tools
 RUN apt-get install -y \
@@ -22,3 +26,5 @@ RUN apt-get install -y python3 python3-pip python3-dev \
 # set up gdb-peda
 RUN git clone https://github.com/longld/peda.git ~/peda \
   && echo "source ~/peda/peda.py" >> ~/.gdbinit
+
+WORKDIR /src
