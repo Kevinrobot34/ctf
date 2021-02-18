@@ -4,7 +4,7 @@
 https://ksnctf.sweetduet.info/problem/20
 
 * keywrods
-  - Crypt, Math
+  - PPC, Math
 * 解法
   - 円周率はだいたいランダムに数が並んでいると思うので、結構早い段階で10桁の素数はあると予想
   - ネットで適当に100桁くらい円周率の値を持ってきて、前から10桁ずつ数を見て素数か判定するだけ

@@ -3,8 +3,8 @@
 ### Basic is secure? 50pt
 https://ksnctf.sweetduet.info/problem/8
 
-* keywrods
-  - Netword、Basic認証
+* keywords
+  - Network、Basic認証
 * 解法
   - pcapファイルを開いてみる
   - HTTPで通信しているっぽい
