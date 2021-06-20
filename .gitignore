@@ -1,3 +1,18 @@
 *.out
 .DS_Store
+
+# VS Code
+.vscode
+
+# pyenv
 .python-version
+
+# mypy
+.mypy_cache
+
+
+# input
+*.pem
+*.der
+*.png
+*.txt
