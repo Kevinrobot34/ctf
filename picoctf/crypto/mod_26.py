@@ -1,4 +1,4 @@
-c = "cvpbPGS{arkg_gvzr_V'yy_gel_2_ebhaqf_bs_ebg13_uJdSftmh}"
+c = "cvpbPGS{arkg_gvzr_V'yy_gel_2_ebhaqf_bs_ebg13_uJdSftmh}"  # cspell: disable-line
 
 
 def rot(text: str, k: int = 13) -> str:
