@@ -41,6 +41,7 @@
   * 最後の `_` 以降は定期的に出題側が書き換えているっぽいやつ
 
 
+
 ## RSA
 ### Mind your Ps and Qs
 * Solution
@@ -72,6 +73,18 @@
   * "e should be larger"
 
 
+### Triple Secure
+* Solution
+  * 違う公開鍵のRSAで３回暗号化している
+  * ただ、 `n1 = p * q` / `n2 = p * r` / `n3 = q * r` としてしまっているので簡単に各素数が求まっちゃう
+    * `math.isqrt(n1 * n2 * n3)` 
+    * https://docs.python.org/ja/3/library/math.html#math.isqrt
+* Flag
+  * `picoCTF{1_gu3ss_tr1pl3_rs4_1snt_tr1pl3_s3cur3!!!!!!}`
+  * "I guess triple rsa isn't triple secure!"
+
+
+
 ## Others
 ### The Numbers
 * Solution
@@ -80,3 +93,12 @@
 * Flag
   * `PICOCTF{THENUMBERSMASON}`
   * なぜか全部大文字...
+
+
+### Pixelated
+* Solution
+  * 二つの画像を重ねる
+  * 重ねる方法はいろいろある(AND/OR/XOR/...)が今回は単純に和をとるだけ
+* Flag
+  * `picoCTF{d562333d}`
+  * 今回のFlagは毎回変わるタイプらしい
