@@ -41,6 +41,19 @@
   * 最後の `_` 以降は定期的に出題側が書き換えているっぽいやつ
 
 
+## Common Key Crypto
+### XtraORdinary
+* Solution
+  * `encrypt.py` を見る
+    * まず `flag` と `key` をbyteごとにxorとって `ctxt` とする
+    * `ctxt` と `random_strs` の各要素をランダムにたくさんXORしてそれを最終的な `ctxt1` とする
+  * これを踏まえまず、 `random_strs` の各要素を高々１度XOR取ったもの32種類が、 `encrypt(flag, key)` の候補
+  * `picoCTF{` から始まるはずなので、上記32種類全てと `picoCTF{` のXORを取ってみると、 `key` の候補が得られる
+  * 上記 `key` を `ctxt1` とXOR取って `flag` が出てくる
+* Flag
+  * `picoCTF{w41t_s0_1_d1dnt_1nv3nt_x0r???}`
+  * "wait so I didn't invent xor?"
+
 
 ## RSA
 ### Mind your Ps and Qs
