@@ -103,8 +103,12 @@
 * Solution
   * 違う公開鍵のRSAで３回暗号化している
   * ただ、 `n1 = p * q` / `n2 = p * r` / `n3 = q * r` としてしまっているので簡単に各素数が求まっちゃう
-    * `math.isqrt(n1 * n2 * n3)` 
-    * https://docs.python.org/ja/3/library/math.html#math.isqrt
+    * やり方１
+      * `math.isqrt(n1 * n2 * n3)` 
+      * https://docs.python.org/ja/3/library/math.html#math.isqrt
+    * やり方２
+      * `p = math.gcd(n1, n2)`
+      * gcdは `O(log min(n1, n2)` なので十分高速
 * Flag
   * `picoCTF{1_gu3ss_tr1pl3_rs4_1snt_tr1pl3_s3cur3!!!!!!}`
   * "I guess triple rsa isn't triple secure!"
