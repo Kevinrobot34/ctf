@@ -83,6 +83,21 @@
   * "small N no good"
 
 
+### miniRSA
+* Solution
+  * "Low Public Exponent Attack" をやれば良い
+  * 変数
+    * `m` : Plain Text
+    * `c` : Cipher Text
+    * `e` : Public Exponent
+    * `n` : Modulus
+  * `m**e < n` であれば直接二分探索で `m` を探すだけ
+    * 実際に見つかる
+* Flag
+  * `picoCTF{n33d_a_lArg3r_e_606ce004}`
+  * "need a large e"
+
+
 ### Mini RSA
 * Solution
   * いわゆる "Low Public Exponent Attack" をやれば良い
@@ -112,6 +127,28 @@
 * Flag
   * `picoCTF{1_gu3ss_tr1pl3_rs4_1snt_tr1pl3_s3cur3!!!!!!}`
   * "I guess triple rsa isn't triple secure!"
+
+
+### college-rowing-team
+* Solution
+  * いわゆる "Håstad's broadcast attack" の問題
+    * 状況としてはpublic exponent `e`を小さい数（今回は３）で固定して、ある平文 `m` を `e` 個の公開鍵で暗号化した暗号文が与えられている
+    * 与えられるmodulusを`n1/n2/n3`、対応する暗号文を`c1/c2/c3`とする
+      * `m^e ≡ c1 mod n1`
+      * `m^e ≡ c2 mod n2`
+      * `m^e ≡ c3 mod n3`
+    * よって中国剰余定理を使うことで `m^e mod (n1*n2*n3)` が求まる
+    * ここで、平文`m`は `m < ni` を満たす（そうでないと平文がtruncateされてしまうので）
+    * つまり `m^e = m^3 < n1 * n2 * n3` であり上記CRTで求めた値は `m^e` そのもの
+    * よってあとは`e`乗根を二分探索やライブラリで求めれば終わり
+  * 今回の設定では、flagとその他の適当な文章3つの合計4つの文字列が、それぞれ3回ずつ暗号化されている
+  * 各暗号文がどの平文に対応するかは分からないので、brute-forceに全パターン試す
+* Flag
+  * `picoCTF{1_gu3ss_p30pl3_p4d_m3ss4g3s_f0r_4_r34s0n}'`
+  * "I guess people pad messages for a reason"
+* References
+  * https://partender810.hatenablog.com/entry/2021/05/19/210459#college-rowing-team-250pt
+  * https://en.wikipedia.org/wiki/Coppersmith%27s_attack
 
 
 
