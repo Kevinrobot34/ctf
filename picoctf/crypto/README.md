@@ -54,6 +54,17 @@
   * `picoCTF{CRYPTOISFUN}`
 
 
+### spelling-quiz
+* Solution
+  * いわゆる単一換字式暗号
+    * 頻度分析による解読方法が知られている
+  * 自分でやるのは辛いので、適当なsolverを使うと楽
+    * https://www.quipqiup.com/
+    * https://www.guballa.de/substitution-solver
+* Flag
+  * `picoCTF{perhaps_the_dog_jumped_over_was_just_tired}`
+
+
 ## Common Key Crypto
 ### XtraORdinary
 * Solution
