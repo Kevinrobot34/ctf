@@ -162,6 +162,20 @@
   * https://en.wikipedia.org/wiki/Coppersmith%27s_attack
 
 
+### Dachshund Attacks
+* Solution
+  * いわゆる "Wiener's Attack" の問題
+    * 状況としては public exponent `e` が非常に大きく、結果として private exponent `d` が非常に小さくなってしまっている
+    * このとき、 `e / n` を連分数展開して近似した有理数を求める計算をしてみると途中で `d` が分母に現れてしまう
+    * `d` がわかってしまったら平文を求めるのは一瞬
+* Flag
+  * `picoCTF{proving_wiener_3878674}`
+* References
+  * [Wiener's attack 短い秘密鍵のRSA暗号への攻撃]( https://cryptee.blogspot.com/2018/10/rsawieners-attack.html )
+  * [Wiener’s Attack を実装した]( https://hackmd.io/@orisano/ryhoUinFe?type=view )
+  * [公開鍵暗号 - RSA - Wiener's Attack]( https://elliptic-shiho.hatenablog.com/entry/2015/12/18/205804 )
+      * これが一番分かりやすい
+
 
 ## Others
 ### The Numbers
