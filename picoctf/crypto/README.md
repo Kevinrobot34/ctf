@@ -177,6 +177,15 @@
       * これが一番分かりやすい
 
 
+### rsa-pop-quiz
+* Solution
+  * RSA暗号に関する細かい問題がたくさん出される
+  * 大人しく一問ずつ解いていくだけ
+  * 途中で "Low Public Exponent Attack" と思いきやうまくできないやつとかあって面倒だけど、冷静にやってみるだけ
+* Flag
+  * `picoCTF{wA8_th4t$_ill3aGal..oa2d2239b}`
+
+
 ## Others
 ### The Numbers
 * Solution
