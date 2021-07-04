@@ -216,3 +216,13 @@
 * Flag
   * `picoCTF{d562333d}`
   * 今回のFlagは毎回変わるタイプらしい
+
+
+### Flags
+* Solution
+  * 「国際信号旗」とよばれるやつらしい
+    * https://en.wikipedia.org/wiki/International_maritime_signal_flags
+  * 見つければ勝ちだが、見つけるのが難しかった
+  * Google画像検索するときには特徴的な色・模様のものからいろいろ突っ込んで見てみるしかない
+* Flag
+  * `PICOCTF{F1AG5AND5TUFF}`
