@@ -65,6 +65,14 @@
   * `picoCTF{perhaps_the_dog_jumped_over_was_just_tired}`
 
 
+### waves over lambda
+* Solution
+  * 単一換字式暗号
+  * "spelling-quiz" 参照
+* Flag
+  * `frequency_is_c_over_lambda_dnvtfrtayu`
+  * `picoCTF{hoge}`の形じゃないんかーい
+
 ## Common Key Crypto
 ### XtraORdinary
 * Solution
