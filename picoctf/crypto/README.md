@@ -226,3 +226,15 @@
   * Google画像検索するときには特徴的な色・模様のものからいろいろ突っ込んで見てみるしかない
 * Flag
   * `PICOCTF{F1AG5AND5TUFF}`
+
+
+### Tapping
+* Solution
+  * よくあるモールス符号の問題
+  * 英語のモールス符号と日本語のやつとで違うので注意
+  * 変換のサイトは探せばいろいろある
+    * https://morse.ariafloat.com/en/
+    * https://morsecode.world/international/translator.html
+* Flag
+  * `PICOCTF{M0RS3C0D31SFUN2683824610}`
+  * "Morse code is fun"
