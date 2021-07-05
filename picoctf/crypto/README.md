@@ -198,6 +198,16 @@
       * これが一番分かりやすい
 
 
+### b00tl3gRSA2
+* Solution
+  * いわゆる "Wiener's Attack" の問題
+  * "Dachshund Attacks"を参照
+* Flag
+  * `picoCTF{bad_1d3a5_4783252}`
+  * "bad ideas"
+    * 大きい `e` を使うのはやめようね
+
+
 ### rsa-pop-quiz
 * Solution
   * RSA暗号に関する細かい問題がたくさん出される
