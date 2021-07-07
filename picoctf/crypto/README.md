@@ -217,6 +217,40 @@
   * `picoCTF{wA8_th4t$_ill3aGal..oa2d2239b}`
 
 
+### No Padding, No Problem
+* Solution1
+  * `c` は直接は渡せない
+  * 今回は `c + n` は渡せちゃう
+  * `(c + n)^d ≡ c^d mod n` なので、簡単に平文が手に入る
+  * 中の実装が雑
+* Solution2
+  * `c` は直接は渡せない
+  * `2^e * c = (2 * m) ^ e` は渡せる
+  * 復号化されて帰ってくるのは `2 * m`
+  * よって2の `mod n` での逆元をかければ平文が手に入る
+  * https://inaz2.hatenablog.com/entry/2016/01/26/222303
+* Solution3
+  * いわゆる "LSB decryption oracle attack"
+  * 今回のセットアップは任意の暗号文を復号化した結果が返ってくる decryption oracle があるのでSolution1/2が成立した
+  * 実は、任意の暗号文を復号化した結果の**偶奇のみ**が分かるだけでも、flagは求められてしまう
+    * `n`: modulus、奇数
+    * `0 <= x < n` つまり、 `0 <= 2*x < 2*n`
+      * `2*x mod n` は
+        * `0 <= 2*x < n` の時 `2*x` で必ず偶数
+        * `n <= 2*x < 2*n` の時 `2*x - n` で必ず奇数（ `n` が奇数なので）
+    * よって逆に、 `2*x mod n` の偶奇で `x` の範囲を絞れる
+      * 偶数なら `0 <= x < n/2`
+      * 奇数なら `n/2 <= x < n`
+  * この性質を踏まえ、二分探索することができる
+    * 誤差を防ぐために区間の端点の情報はFractionで持っておく
+  * References
+    * https://kimiyuki.net/blog/2017/06/24/lsb-leak-attack/
+    * https://inaz2.hatenablog.com/entry/2016/11/09/220529
+* Flag
+  * `b'picoCTF{m4yb3_Th0se_m3s54g3s_4r3_difurrent_1772735}'`
+  * "maybe those messages are difurrent"
+
+
 ## Others
 ### The Numbers
 * Solution
