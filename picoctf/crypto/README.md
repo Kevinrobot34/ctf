@@ -207,6 +207,17 @@
   * "bad ideas"
     * 大きい `e` を使うのはやめようね
 
+### b00tl3gRSA3
+* Solution
+  * いわゆる "Multi-prime RSA" と呼ばれる設定の問題
+    * 3つ以上の素数から modulus `n` が計算されてしまっている
+  * この場合には素因数分解が現実的にできてしまいがちらしい
+    * `sympy` の [factorint]( https://docs.sympy.org/latest/modules/ntheory.html#sympy.ntheory.factor_.factorint ) などを使うとちょっと待てば素因数分解できてしまう
+    * `gmpy`とかにも似たようなのがあるかも
+* Flag
+  * `picoCTF{too_many_fact0rs_0731311}`
+  * "too many factors"
+
 
 ### rsa-pop-quiz
 * Solution
