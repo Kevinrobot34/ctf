@@ -54,6 +54,20 @@
   * `picoCTF{CRYPTOISFUN}`
 
 
+### la cifra de
+* Solution
+  * いわゆるヴィジュネル暗号 (Vigenère cipher)
+    * 最初換字式暗号かと思い、 https://www.quipqiup.com/ に投げていろいろ考えたが全くうまくいかない
+    * ルール一つじゃ対応できないあたりで他を当たるべきだった
+  * Easy1と違って鍵も分からないので適当にsolverに突っ込む
+    * https://www.guballa.de/vigenere-solver
+      * `Classic Vigenere` & `English` でやる
+    * keyは `flag` らしい
+* Flag
+  * `picoCTF{b311a50_0r_v1gn3r3_c1ph3ra966878a}`
+  * "bellaso or vigenere cipher"
+
+
 ### spelling-quiz
 * Solution
   * いわゆる単一換字式暗号
@@ -301,3 +315,25 @@
 * Flag
   * `PICOCTF{M0RS3C0D31SFUN2683824610}`
   * "Morse code is fun"
+
+
+### Mr-Worldwide
+* Solution
+  * ぱっと見て、緯度と経度っぽい
+  * Google検索するとちゃんと土地を示している
+  * 適宜都市名を並べる（これが意外と絶妙にわからない...）
+    * `Kamigyo Ward, Kyoto`
+    * `Odesa`
+    * `Dayton, Ohio`
+    * `Istanbul`
+    * `Abu Dhabi`
+    * `Kuala Lumpur`
+    * `_`
+    * `Addis Ababa`
+    * `Loja`
+    * `Amsterdam`
+    * `Sleepy Hollow, New York`
+    * `Kodiak, Alaska`
+    * `Alexandria`
+* Flag
+  * `picoCTF{KODIAK_ALASKA}`
