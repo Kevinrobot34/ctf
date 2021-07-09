@@ -87,6 +87,17 @@
   * `frequency_is_c_over_lambda_dnvtfrtayu`
   * `picoCTF{hoge}`の形じゃないんかーい
 
+
+### Play Nice
+* Solution
+  * "Playfair" と呼ばれる暗号
+  * 暗号表が与えられるので、大人しく復号するだけ
+* Reference
+  * https://en.wikipedia.org/wiki/Playfair_cipher
+* Flag
+  * `25a0ea7ff711f17bddefe26a6354b2f3`
+
+
 ## Common Key Crypto
 ### XtraORdinary
 * Solution

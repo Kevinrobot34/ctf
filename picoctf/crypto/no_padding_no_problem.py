@@ -20,6 +20,9 @@ class Oracle:
         self.e = int(ret.split('e: ')[1].split(r'\n')[0])
         self.c = int(ret.split('ciphertext: ')[1].split(r'\n')[0])
 
+    def __del__(self):
+        self.tn.close()
+
     def read(self, encode: str = 'utf-8') -> str:
         return str(self.tn.read_until(self.target_sentence.encode(encode)))
 
