@@ -3,7 +3,7 @@
 ### Square Cipher 60pt
 https://ksnctf.sweetduet.info/problem/22
 
-* keywrods
+* keywords
   - Crypt, QR
 * 解法
   - アルファベットがぱっと見ランダムに `31x31` 敷き詰められてる

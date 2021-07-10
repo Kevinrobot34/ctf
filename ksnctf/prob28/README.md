@@ -3,7 +3,7 @@
 ### Lo-Tech Cipher60 points
 https://ksnctf.sweetduet.info/problem/28
 
-* keywrods
+* keywords
   - Crypt, Visual
 * 解法
   - Visual Cryptography

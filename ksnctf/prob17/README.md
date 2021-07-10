@@ -3,7 +3,7 @@
 ### Math II 50pt
 https://ksnctf.sweetduet.info/problem/17
 
-* keywrods
+* keywords
   - Crypt, Math
 * 解法
   - ざっくりと見積もると`y`は1以上10**40以下

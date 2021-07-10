@@ -3,7 +3,7 @@
 ### G00913 30pt
 https://ksnctf.sweetduet.info/problem/20
 
-* keywrods
+* keywords
   - PPC, Math
 * 解法
   - 円周率はだいたいランダムに数が並んでいると思うので、結構早い段階で10桁の素数はあると予想

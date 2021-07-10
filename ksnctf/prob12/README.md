@@ -3,7 +3,7 @@
 ### Hypertext Preprocessor 70pt
 https://ksnctf.sweetduet.info/problem/12
 
-* keywrods
+* keywords
   - Web、PHP
 * 解法
   - ページ開いてみる
