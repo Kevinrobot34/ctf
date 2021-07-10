@@ -287,6 +287,37 @@
   * "maybe those messages are difurrent"
 
 
+### john_pollard
+* Solution1
+  * とりあえず `cert` を開いてみる
+    ```
+    -----BEGIN CERTIFICATE-----
+    MIIB6zCB1AICMDkwDQYJKoZIhvcNAQECBQAwEjEQMA4GA1UEAxMHUGljb0NURjAe
+    (snip)
+    q16/S1WLvzg4PsElmv1f
+    -----END CERTIFICATE-----
+    ```
+  * pycryptodomeの `RSA.import_key` で読み込めそう
+  * `{'_n': Integer(4966306421059967), '_e': Integer(65537)}` を得る
+  * ヒントによると `picoCTF{p,q}` がフラグとのことなので、あとは因数分解するだけ
+    * factordbでもsympyでもなんでもOK
+* Solution2
+  * `openssl` を使って以下のように modulus　を取得できる
+    ```bash
+    $ openssl x509 -pubkey -noout -in cert | openssl rsa -pubin -text
+    Public-Key: (53 bit)
+    Modulus: 4966306421059967 (0x11a4d45212b17f)
+    Exponent: 65537 (0x10001)
+    writing RSA key
+    -----BEGIN PUBLIC KEY-----
+    MCIwDQYJKoZIhvcNAQEBBQADEQAwDgIHEaTUUhKxfwIDAQAB
+    -----END PUBLIC KEY-----
+    ```
+  * 残りはSolution1と同じ
+* Flag
+  * `picoCTF{73176001,67867967}`
+
+
 ## Others
 ### The Numbers
 * Solution
