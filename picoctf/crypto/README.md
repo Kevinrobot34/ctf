@@ -283,8 +283,43 @@
     * https://kimiyuki.net/blog/2017/06/24/lsb-leak-attack/
     * https://inaz2.hatenablog.com/entry/2016/11/09/220529
 * Flag
-  * `b'picoCTF{m4yb3_Th0se_m3s54g3s_4r3_difurrent_1772735}'`
+  * `picoCTF{m4yb3_Th0se_m3s54g3s_4r3_difurrent_1772735}`
   * "maybe those messages are difurrent"
+
+
+### It's Not My Fault 1
+* Solution1
+  * PoW (Proof of Work) パート
+    * > Enter a string that starts with "76537" (no quotes) which creates an md5 hash that ends in these six hex digits: d9d3a9
+    * 特定の文字列からはじまり、md5でハッシュを取ると特定の文字列で終わるような文字列を探せ、的なメインパートと関係ない問題を解かされる
+    * PoWというらしい。 [参考]( https://bitbank.cc/glossary/pow )
+    * 指定された文字列に適当な数字を連結して、brute-forceに探す
+  * メインパート
+    * 以下を満たす `n` と `e` が与えられる
+      * `n = p * q`
+        * RSAのよくある modulus で、 `p,q` は素数
+      * `dp = randint(2, 1<<20)`
+      * `dq = randint(2, q-1)`
+      * `d = CRT((dp, p-1), (dq, q-1))`
+      * `e = inverse(d, (p-1)*(q-1))`
+    * `dp * e ≡ 1 mod (p-1)` であることに注目する
+      * オイラーの定理より任意の `x` に対し、 `x^{dp * e} ≡ x mod p`
+      * `(pow(x, dp*e, p) - x)` は `p` の倍数
+      * `(pow(x, dp*e, n) - x)` も大体 `p` の倍数（**要検証**）
+    * `dp` は高々 `2^20 ≒ 10^6` なので全探索できる 
+    * `x` も適当な数でいくつか試してみる
+* Flag
+  * `picoCTF{1_c4n'7_b3l13v3_17'5_n07_f4ul7_4774ck!!!}`
+  * "I can't believe it's not fault attack!!!"
+* References
+  * Writeups
+    * [#1]( https://miso-24.hatenablog.com/entry/2021/04/13/214713#Its-Not-My-Fault-1 )
+    * [#2]( https://github.com/Ethan127/CTF_writeups/tree/main/picoCTF_2021/Cryptography/it's-not-my-fault-2 )
+  * Papers
+    * [Modulus Fault Attacks Against RSA-CRT Signatures]( https://eprint.iacr.org/2011/388.pdf )
+    * [A Polynomial Time Attack on RSA with Private CRT-Exponents Smaller Than N0.073]( https://www.iacr.org/archive/crypto2007/46220388/46220388.pdf )
+  * Others
+    * [mathoverflow: Attack on CRT-RSA]( https://mathoverflow.net/questions/120160/attack-on-crt-rsa )
 
 
 ### john_pollard
@@ -294,7 +329,6 @@
     -----BEGIN CERTIFICATE-----
     MIIB6zCB1AICMDkwDQYJKoZIhvcNAQECBQAwEjEQMA4GA1UEAxMHUGljb0NURjAe
     (snip)
-    q16/S1WLvzg4PsElmv1f
     -----END CERTIFICATE-----
     ```
   * pycryptodomeの `RSA.import_key` で読み込めそう
@@ -313,6 +347,7 @@
     MCIwDQYJKoZIhvcNAQEBBQADEQAwDgIHEaTUUhKxfwIDAQAB
     -----END PUBLIC KEY-----
     ```
+    * `openssl x509 -in cert -text -noout`　とやるといろんな情報が出てくる
   * 残りはSolution1と同じ
 * Flag
   * `picoCTF{73176001,67867967}`
