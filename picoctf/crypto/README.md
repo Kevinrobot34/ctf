@@ -125,6 +125,20 @@
   * 完全にランダムなタイプは焦るね
 
 
+### Double DES
+* Solution
+  * Triple DESならぬ、Double DESについての問題
+  * "Meet-in-the-middle attack"(中間一致攻撃) と呼ばれる既知平文攻撃が可能
+    * ブロック暗号（共通鍵暗号）は安全性を高めるために、2つの異なる鍵を用いて2度暗号化を行うことがある（Double DES / Triple DES）
+      * 全探索する場合には `(key1, key2)` を全て試す必要があり、元々の鍵空間の2乗の計算量が必要となり安全性が増すというロジック
+    * ただし、既知平文攻撃が可能であると、メモリ使用量が増えるトレードオフはあるが、元の鍵空間の広さの全探索で済んでしまう
+    * `c = gj(fi(p))` は `Gj(c) = fi(p)` (`Gj`は`gj`の逆関数)と書けるが、この両辺の鍵`i,j`について全探索をして、一致するかをハッシュテーブルを用いて判定すれば良い
+* Flag
+  * `9af5126b7bc7f825b3cae0e32bd1acb4`
+* Reference
+  * https://en.wikipedia.org/wiki/Meet-in-the-middle_attack
+
+
 ## RSA
 ### Mind your Ps and Qs
 * Solution
